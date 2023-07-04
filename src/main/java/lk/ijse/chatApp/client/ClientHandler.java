@@ -1,4 +1,4 @@
-package lk.ijse.chatApp.server;
+package lk.ijse.chatApp.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientHandler implements Runnable{
+
     public static final List<ClientHandler> clientHandlerList = new ArrayList<>();
     private final Socket socket;
     private final DataInputStream inputStream;
@@ -28,11 +29,11 @@ public class ClientHandler implements Runnable{
             try {
                 String utf = inputStream.readUTF();
                 if (utf.equals("*image*")) {
-                    receiveImage();
+                //    receiveImage();
                 } else {
                     for (ClientHandler handler : clientHandlerList) {
                         if (!handler.clientName.equals(clientName)) {
-                            handler.sendMessage(clientName, utf);
+                         //   handler.sendMessage(clientName, utf);
                         }
                     }
                 }
@@ -46,29 +47,7 @@ public class ClientHandler implements Runnable{
         }
     }
 
-    public void sendMessage(String sender, String msg) throws IOException {
-        outputStream.writeUTF(sender + ": " + msg);
-        outputStream.flush();
-    }
 
-    private void receiveImage() throws IOException {
-        int size = inputStream.readInt();
-        byte[] bytes = new byte[size];
-        inputStream.readFully(bytes);
-        for (ClientHandler handler : clientHandlerList) {
-            if (!handler.clientName.equals(clientName)) {
-                handler.sendImage(clientName, bytes);
-//                System.out.println(clientName+" - image sent ");
-            }
-        }
-    }
 
-    private void sendImage(String sender, byte[] bytes) throws IOException {
-        outputStream.writeUTF("*image*");
-        outputStream.writeUTF(sender);
-        outputStream.writeInt(bytes.length);
-        outputStream.write(bytes);
-        outputStream.flush();
-//        System.out.println("Image Sent");
-    }
+
 }

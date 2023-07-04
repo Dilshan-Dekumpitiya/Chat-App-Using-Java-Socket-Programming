@@ -15,18 +15,17 @@ public class ClientLoginFormController {
 
     @FXML
     private AnchorPane clientLoginPane;
+
     @FXML
     private JFXTextField txtName;
+
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
-        Client client = new Client(txtName.getText());
+        Runnable client = new Client(txtName.getText());
         Thread thread = new Thread(client);
         thread.start();
         Stage stage = (Stage) clientLoginPane.getScene().getWindow();
-     //   stage.close();
-
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("./view/ClientChatForm.fxml"))));
-      //  stage.show();
+        stage.close();
     }
 
 }

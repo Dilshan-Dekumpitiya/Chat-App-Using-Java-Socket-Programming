@@ -33,7 +33,7 @@ public class ServerStartFormController {
         notification.show();
     }
     private void startServer() throws IOException {
-        Server server = Server.getServerSocket();
+        Runnable server = Server.getServerSocket();
         Thread thread = new Thread(server);
         thread.start();
     }

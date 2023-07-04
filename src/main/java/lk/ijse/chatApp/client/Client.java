@@ -21,7 +21,7 @@ public class Client implements Runnable{
     public Client(String name) throws IOException {
         this.name = name;
 
-        socket = new Socket("localhost", 5000);
+        socket = new Socket("localhost", 3000);
         inputStream = new DataInputStream(socket.getInputStream());
         outputStream = new DataOutputStream(socket.getOutputStream());
 
@@ -34,26 +34,13 @@ public class Client implements Runnable{
             throw new RuntimeException(e);
         }
     }
-
-    @Override
-    protected void finalize() throws Throwable {
-        Thread.interrupted(); // To terminate the thread, interrupt it
-        inputStream.close();
-        outputStream.close();
-        socket.close();
-    }
-
     @Override
     public void run() {
         String message = "";
         while (!message.equals("exit")) {
             try {
                 message = inputStream.readUTF();
-                if (message.equals("*image*")) {
-                    receiveImage();
-                } else {
-                  //  clientChatFormController.writeMessage(message);
-                }
+
 
             } catch (IOException e) {
                 try {
@@ -64,7 +51,6 @@ public class Client implements Runnable{
             }
         }
     }
-
     public void sendMessage(String msg) throws IOException {
         outputStream.writeUTF(msg);
         outputStream.flush();
@@ -111,8 +97,7 @@ public class Client implements Runnable{
         byte[] bytes = new byte[size];
         inputStream.readFully(bytes);
         System.out.println(name + "- Image received: from " + utf);
-     //   clientChatFormController.setImage(bytes, utf);
+        clientChatFormController.setImage(bytes, utf);
         // Handle the received image bytes as needed
     }
-
 }
