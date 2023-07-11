@@ -21,7 +21,6 @@ public class ServerStartFormController {
         startServer();
 
         Stage stage = (Stage) startServerPane.getScene().getWindow();
-
         stage.close();
 
         Stage stage2 = new Stage();
@@ -32,8 +31,9 @@ public class ServerStartFormController {
         Notifications notification = NotificationController.notification("Server up & running", "Server Alert");
         notification.show();
     }
+
     private void startServer() throws IOException {
-        Runnable server = Server.getServerSocket();
+        Runnable server = Server.getServerSocket(); //dependency injection (Runnable interface)
         Thread thread = new Thread(server);
         thread.start();
     }

@@ -9,9 +9,10 @@ import lk.ijse.chatApp.controller.ClientChatFormController;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.Socket;
 
-public class Client implements Runnable{
+public class Client implements Runnable, Serializable { //Serailizale --> To save object in to hard disk
     private final String name;
     private final Socket socket;
     private final DataInputStream inputStream;
@@ -34,13 +35,26 @@ public class Client implements Runnable{
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        Thread.interrupted(); // To terminate the thread, interrupt it
+        inputStream.close();
+        outputStream.close();
+        socket.close();
+    }
+
     @Override
     public void run() {
         String message = "";
         while (!message.equals("exit")) {
             try {
                 message = inputStream.readUTF();
-
+                if (message.equals("*image*")) {
+                    receiveImage();
+                } else {
+                    clientChatFormController.writeMessage(message);
+                }
 
             } catch (IOException e) {
                 try {
@@ -88,6 +102,7 @@ public class Client implements Runnable{
     }
 
     public String getName() {
+
         return name;
     }
 

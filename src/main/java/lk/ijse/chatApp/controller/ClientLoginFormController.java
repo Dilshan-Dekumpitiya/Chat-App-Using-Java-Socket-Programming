@@ -21,11 +21,9 @@ public class ClientLoginFormController {
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
-        Runnable client = new Client(txtName.getText());
-        Thread thread = new Thread(client);
+        Client client = new Client(txtName.getText()); //load client
+        Thread thread = new Thread(client); //Runnable interface
         thread.start();
-        Stage stage = (Stage) clientLoginPane.getScene().getWindow();
-        stage.close();
+        txtName.clear();
     }
-
 }

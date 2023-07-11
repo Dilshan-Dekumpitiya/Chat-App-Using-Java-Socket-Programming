@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
    <children>
-      <JFXTextField labelFloat="true" layoutX="47.0" layoutY="332.0" prefHeight="25.0" prefWidth="368.0" promptText="message here" />
+      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="47.0" layoutY="332.0" prefHeight="25.0" prefWidth="368.0" promptText="message here" />
       <Separator layoutX="38.0" layoutY="321.0" prefHeight="2.0" prefWidth="509.0" />
-      <JFXButton layoutX="447.0" layoutY="332.0" prefHeight="25.0" prefWidth="99.0" text="Send" textFill="#f80000" />
+      <JFXButton layoutX="480.0" layoutY="332.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="99.0" text="Send" textFill="#f80000" />
       <Label layoutX="252.0" layoutY="26.0" text="Label" />
       <VBox fx:id="vbox" layoutX="36.0" layoutY="53.0" prefHeight="200.0" prefWidth="433.0" />
    </children>
