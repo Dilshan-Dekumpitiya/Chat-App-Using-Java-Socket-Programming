@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="738.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
+<AnchorPane prefHeight="659.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
    <children>
-      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="29.0" layoutY="689.0" prefHeight="25.0" prefWidth="336.0" promptText="message here" />
-      <Separator layoutX="29.0" layoutY="659.0" prefHeight="5.0" prefWidth="421.0" />
-      <JFXButton layoutX="378.0" layoutY="677.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="62.0" text="Send" textFill="#f80000" />
-      <Label layoutX="252.0" layoutY="26.0" text="Label" />
-      <JFXButton layoutX="329.0" layoutY="672.0" onAction="#attachImageOnAction" prefHeight="34.0" prefWidth="36.0" text=".">
+      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="29.0" layoutY="625.0" prefHeight="25.0" prefWidth="336.0" promptText="message here" />
+      <Separator layoutX="15.0" layoutY="606.0" prefHeight="5.0" prefWidth="421.0" />
+      <JFXButton layoutX="365.0" layoutY="626.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="62.0" text="Send" textFill="#f80000" />
+      <Label layoutX="197.0" layoutY="29.0" text="Label" />
+      <JFXButton layoutX="322.0" layoutY="621.0" onAction="#attachImageOnAction" prefHeight="34.0" prefWidth="36.0" text=".">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -29,8 +29,7 @@
             <Font size="1.0" />
          </font>
       </JFXButton>
-    <AnchorPane layoutX="36.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" prefHeight="74.0" prefWidth="72.0" />
-      <ScrollPane layoutX="5.0" layoutY="68.0" prefHeight="525.0" prefWidth="404.0">
+      <ScrollPane layoutX="23.0" layoutY="68.0" prefHeight="525.0" prefWidth="404.0">
          <content>
             <VBox fx:id="vbox" prefHeight="517.0" prefWidth="397.0" />
          </content>

@@ -23,12 +23,6 @@ public class ClientHandler implements Runnable{
         clientHandlerList.add(this);
     }
 
-    public static void broadcast(String msg) throws IOException {
-        for (ClientHandler handler : clientHandlerList) {
-            handler.sendMessage("SERVER", msg);
-        }
-    }
-
     public void sendMessage(String sender, String msg) throws IOException {
         outputStream.writeUTF(sender + ": " + msg); //write data
         outputStream.flush();
@@ -41,7 +35,7 @@ public class ClientHandler implements Runnable{
             try {
                 String utf = inputStream.readUTF(); //UTF-8 encoded string from the dataInputStream.
                 if (utf.equals("*image*")) {
-                //    receiveImage();
+                    receiveImage();
                 } else {
                     for (ClientHandler handler : clientHandlerList) {
                         if (!handler.clientName.equals(clientName)) {
@@ -55,6 +49,27 @@ public class ClientHandler implements Runnable{
                 break;
             }
         }
+    }
+
+    private void receiveImage() throws IOException {
+        int size = inputStream.readInt();
+        byte[] bytes = new byte[size];
+        inputStream.readFully(bytes);
+        for (ClientHandler handler : clientHandlerList) {
+            if (!handler.clientName.equals(clientName)) {
+                handler.sendImage(clientName, bytes);
+//                System.out.println(clientName+" - image sent ");
+            }
+        }
+    }
+
+    private void sendImage(String sender, byte[] bytes) throws IOException {
+        outputStream.writeUTF("*image*");
+        outputStream.writeUTF(sender);
+        outputStream.writeInt(bytes.length);
+        outputStream.write(bytes);
+        outputStream.flush();
+//        System.out.println("Image Sent");
     }
 
 

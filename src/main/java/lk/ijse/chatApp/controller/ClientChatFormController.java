@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lk.ijse.chatApp.client.Client;
+import lk.ijse.chatApp.client.ClientHandler;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -120,8 +121,7 @@ public class ClientChatFormController {
         });
     }
 
-    void appendText(String message) {
-
+    void appendText(String message) throws IOException {
         HBox hBox = new HBox();
         hBox.setStyle("-fx-alignment: center-right;-fx-fill-height: true;-fx-min-height: 50;-fx-pref-width: 520;-fx-max-width: 520;-fx-padding: 10");
         Label messageLbl = new Label(message);

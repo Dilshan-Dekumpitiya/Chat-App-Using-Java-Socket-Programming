@@ -90,7 +90,6 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
 
         stage.setOnCloseRequest(event -> {
             try {
-//                System.out.println(name + " closed");
                 inputStream.close();
                 outputStream.close();
                 socket.close();
