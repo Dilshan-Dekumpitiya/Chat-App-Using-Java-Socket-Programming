@@ -4,15 +4,30 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
    <children>
-      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="47.0" layoutY="332.0" prefHeight="25.0" prefWidth="368.0" promptText="message here" />
+      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="47.0" layoutY="332.0" prefHeight="25.0" prefWidth="433.0" promptText="message here" />
       <Separator layoutX="38.0" layoutY="321.0" prefHeight="2.0" prefWidth="509.0" />
       <JFXButton layoutX="480.0" layoutY="332.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="99.0" text="Send" textFill="#f80000" />
       <Label layoutX="252.0" layoutY="26.0" text="Label" />
       <VBox fx:id="vbox" layoutX="36.0" layoutY="53.0" prefHeight="200.0" prefWidth="433.0" />
+      <JFXButton layoutX="434.0" layoutY="328.0" prefHeight="34.0" prefWidth="36.0" text=".">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/camera.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="1.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
