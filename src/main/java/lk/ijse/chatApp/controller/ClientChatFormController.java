@@ -11,10 +11,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import lk.ijse.chatApp.client.Client;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class ClientChatFormController {
 
@@ -56,6 +61,35 @@ public class ClientChatFormController {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void attachImageOnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg");
+        fileChooser.getExtensionFilters().add(imageFilter);
+        File selectedFile = fileChooser.showOpenDialog(new Stage());
+        if (selectedFile != null) {
+            try {
+                byte[] bytes = Files.readAllBytes(selectedFile.toPath());
+                HBox hBox = new HBox();
+                hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 520; -fx-max-width: 520; -fx-padding: 10; -fx-alignment: center-right;");
+
+                // Display the image in an ImageView or any other UI component
+                ImageView imageView = new ImageView(new Image(new FileInputStream(selectedFile)));
+                imageView.setStyle("-fx-padding: 10px;");
+                imageView.setFitHeight(180);
+                imageView.setFitWidth(100);
+
+                hBox.getChildren().addAll(imageView);
+                vbox.getChildren().add(hBox);
+
+                client.sendImage(bytes);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
