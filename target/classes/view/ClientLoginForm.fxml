@@ -16,7 +16,7 @@
             <Font size="1.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="clientImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/user.png" />
                </image>

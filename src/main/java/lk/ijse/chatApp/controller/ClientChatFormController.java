@@ -47,7 +47,9 @@ public class ClientChatFormController implements Initializable{
     @FXML
     private Label lblClientName;
 
-    private ClientHandler clientHandler;
+
+    @FXML
+    private VBox vBoxClientImage;
 
     public Client getClient() {
 
@@ -196,12 +198,11 @@ public class ClientChatFormController implements Initializable{
     }
 
     public void setName(String name){
-        lblClientName.setText("Hey "+name);
+        lblClientName.setText(name);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         emojiAnchorPane.setVisible(false);
         int buttonIndex = 0;
         for (int row = 0; row < 4; row++) {
@@ -216,5 +217,24 @@ public class ClientChatFormController implements Initializable{
                 }
             }
         }
+    }
+
+    public void setClientImage(Image image){
+        HBox hBox = new HBox();
+
+        hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 520; -fx-max-width: 520; -fx-padding: 10; " );
+        // Display the image in an ImageView or any other UI component
+        Platform.runLater(() -> {
+            ImageView imageView = new ImageView(image);
+            imageView.setStyle("-fx-padding: 10px;");
+            imageView.setFitHeight(180);
+            imageView.setFitWidth(100);
+
+            hBox.getChildren().addAll(imageView);
+            vBoxClientImage.getChildren().add(hBox);
+        });
+
+       // clientImage=new ImageView(new Image(new ByteArrayInputStream(bytes)));
+       // clientImage.setImage(image);
     }
 }

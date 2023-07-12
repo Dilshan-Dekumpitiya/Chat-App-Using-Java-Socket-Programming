@@ -1,0 +1,21 @@
+.btnLogin{
+    -fx-background-color:  #30336b;
+    -fx-background-radius: 10;
+    -fx-min-width: 90px;
+    -fx-min-height: 40px;
+    -fx-max-width: 90px;
+    -fx-max-height: 40px;
+}
+.clientNameLabel{
+    -fx-text-fill: red;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.heyLabel{
+    -fx-text-fill: blue;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.clientChatScrollPane{
+    -fx-text-fill: #57606f;
+}
