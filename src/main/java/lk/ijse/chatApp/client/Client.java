@@ -86,7 +86,9 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
         stage.setResizable(false);
         stage.setScene(new Scene(parent));
         stage.setTitle(name + "'s Chat");
+
         stage.show();
+        clientChatFormController.setName(name);
 
         stage.setOnCloseRequest(event -> {
             try {

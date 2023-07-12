@@ -19,7 +19,10 @@
       <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="29.0" layoutY="625.0" prefHeight="25.0" prefWidth="336.0" promptText="message here" />
       <Separator layoutX="15.0" layoutY="614.0" prefHeight="5.0" prefWidth="421.0" />
       <JFXButton layoutX="365.0" layoutY="626.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="62.0" text="Send" textFill="#f80000" />
-      <Label layoutX="197.0" layoutY="29.0" text="Label" />
+      <Label fx:id="lblClientName" layoutX="22.0" layoutY="13.0" prefHeight="34.0" prefWidth="210.0" text="Label">
+         <font>
+            <Font size="28.0" />
+         </font></Label>
       <JFXButton layoutX="289.0" layoutY="622.0" onAction="#attachImageOnAction" prefHeight="34.0" prefWidth="36.0" text=".">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">

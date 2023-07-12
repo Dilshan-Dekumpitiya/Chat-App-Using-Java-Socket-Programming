@@ -26,4 +26,9 @@ public class ClientLoginFormController {
         thread.start();
         txtName.clear();
     }
+
+    @FXML
+    void btnAddClientImageOnAction(ActionEvent event) {
+
+    }
 }

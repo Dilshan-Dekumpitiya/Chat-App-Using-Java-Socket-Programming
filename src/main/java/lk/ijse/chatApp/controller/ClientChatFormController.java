@@ -44,6 +44,11 @@ public class ClientChatFormController implements Initializable{
     @FXML
     private GridPane emojiGridpane;
 
+    @FXML
+    private Label lblClientName;
+
+    private ClientHandler clientHandler;
+
     public Client getClient() {
 
         return client;
@@ -190,8 +195,13 @@ public class ClientChatFormController implements Initializable{
         txtMsg.appendText(button.getText());
     }
 
+    public void setName(String name){
+        lblClientName.setText("Hey "+name);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         emojiAnchorPane.setVisible(false);
         int buttonIndex = 0;
         for (int row = 0; row < 4; row++) {
