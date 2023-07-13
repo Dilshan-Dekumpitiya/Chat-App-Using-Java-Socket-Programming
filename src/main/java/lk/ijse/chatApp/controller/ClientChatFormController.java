@@ -98,6 +98,8 @@ public class ClientChatFormController implements Initializable{
             if (!Objects.equals(text, "")) {
                 appendText(text);
                 client.sendMessage(text);
+                txtMsg.clear();
+
             } else {
                 ButtonType ok = new ButtonType("Ok");
                 ButtonType cancel = new ButtonType("Cancel");

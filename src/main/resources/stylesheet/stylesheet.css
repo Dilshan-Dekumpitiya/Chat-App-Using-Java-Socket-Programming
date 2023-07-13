@@ -35,3 +35,15 @@
     -fx-font-size: 1px;
     -fx-text-fill: white;
 }
+
+.btnLogin{
+    -fx-background-color:  #12CBC4;
+    -fx-background-radius: 10;
+    -fx-min-width: 90px;
+    -fx-min-height: 10px;
+    -fx-max-width: 180px;
+    -fx-max-height: 400px;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
+}

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class ClientLoginFormController implements Initializable {
 
@@ -37,6 +39,9 @@ public class ClientLoginFormController implements Initializable {
 
     private Image image;
 
+    @FXML
+    private Label lblNameError;
+
   //  private byte[] bytes;
 
     private ClientChatFormController clientChatFormController;
@@ -44,26 +49,26 @@ public class ClientLoginFormController implements Initializable {
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
-        Client client = new Client(txtName.getText()); //load client
-        Thread thread = new Thread(client); //Runnable interface
-        thread.start();
-        txtName.clear();
+        lblNameError.setVisible(false);
+        if (Pattern.matches("^[a-zA-Z\\s]+", txtName.getText())) {
 
-      //  clientImage.setImage(null);
-      //  clientImage.setImage(new Image(new FileInputStream("src/main/resources/img/user.png")));
+            Client client = new Client(txtName.getText()); //load client
+            Thread thread = new Thread(client); //Runnable interface
+            thread.start();
+            txtName.clear();
+            txtName.requestFocus();
+            txtName.setStyle("-fx-border-color: blue;-fx-border-radius: 10;");
+        }else {
+            txtName.setStyle("-fx-border-color: red;-fx-border-radius: 10;");
 
-    }
+            lblNameError.setText("* Can't use Numbers as your name");
 
-    public void setClient(Client client) {
+            lblNameError.setVisible(true);
+            txtName.clear();
+            txtName.requestFocus();
+        }
 
-        this.client = client;
-    }
 
-
-
-    public Image getImage() {
-
-        return image;
     }
 
     @FXML
@@ -74,5 +79,7 @@ public class ClientLoginFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(() ->  txtName.requestFocus());
+        lblNameError.setVisible(false);
+        txtName.setStyle("-fx-border-color: blue;-fx-border-radius: 10;");
     }
 }
