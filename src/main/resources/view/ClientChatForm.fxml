@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
    <children>
-      <ImageView fitHeight="707.0" fitWidth="461.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true">
+      <ImageView fitHeight="707.0" fitWidth="461.0" layoutX="-7.0" layoutY="-7.0" opacity="0.33" pickOnBounds="true">
          <image>
             <Image url="@../img/background.png" />
          </image>
@@ -42,7 +42,7 @@
       </JFXButton>
       <ScrollPane layoutX="23.0" layoutY="68.0" prefHeight="537.0" prefWidth="404.0" styleClass="clientChatScrollPane" stylesheets="@../stylesheet/stylesheet.css">
          <content>
-            <VBox fx:id="vbox" prefHeight="535.0" prefWidth="402.0" />
+            <VBox fx:id="vbox" prefHeight="535.0" prefWidth="402.0" styleClass="clientChatScrollPane" stylesheets="@../stylesheet/stylesheet.css" />
          </content>
       </ScrollPane>
       <JFXButton layoutX="319.0" layoutY="646.0" onAction="#loadEmojiOnAction" prefHeight="25.0" prefWidth="36.0" text=".">
@@ -81,5 +81,10 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <ImageView fitHeight="48.0" fitWidth="45.0" layoutX="331.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/chat.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

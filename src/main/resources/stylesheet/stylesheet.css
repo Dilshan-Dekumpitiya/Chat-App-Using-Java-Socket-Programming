@@ -8,9 +8,10 @@
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
-/*.clientChatScrollPane{
-    -fx-background-color: #747d8c;
-}*/
+.clientChatScrollPane{
+ /*   -fx-background-color: #747d8c;*/
+    -fx-background-color: transparent;
+}
 .btnStartServer{
     -fx-background-color:  #30336b;
     -fx-background-radius: 10;
