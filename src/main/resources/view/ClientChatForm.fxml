@@ -21,14 +21,21 @@
             <Image url="@../img/background.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="17.0" layoutY="646.0" prefHeight="25.0" prefWidth="336.0" promptText="message here" />
+      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="17.0" layoutY="646.0" prefHeight="25.0" prefWidth="353.0" promptText="message here" />
       <Separator layoutX="15.0" layoutY="630.0" prefHeight="5.0" prefWidth="421.0" />
-      <JFXButton layoutX="353.0" layoutY="646.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="62.0" text="Send" textFill="#f80000" />
+      <JFXButton layoutX="372.0" layoutY="642.0" minWidth="55.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="55.0" styleClass="btnSend" stylesheets="@../stylesheet/stylesheet.css" text="." textFill="#f80000">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/send-btn.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
       <Label fx:id="lblClientName" layoutX="98.0" layoutY="13.0" prefHeight="40.0" prefWidth="175.0" styleClass="clientNameLabel" stylesheets="@../stylesheet/stylesheet.css" text="Label">
          <font>
             <Font size="28.0" />
          </font></Label>
-      <JFXButton layoutX="283.0" layoutY="642.0" onAction="#attachImageOnAction" prefHeight="34.0" prefWidth="36.0" text=".">
+      <JFXButton layoutX="301.0" layoutY="642.0" onAction="#attachImageOnAction" prefHeight="34.0" prefWidth="36.0" text=".">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,7 +52,7 @@
             <VBox fx:id="vbox" prefHeight="535.0" prefWidth="402.0" styleClass="clientChatScrollPane" stylesheets="@../stylesheet/stylesheet.css" />
          </content>
       </ScrollPane>
-      <JFXButton layoutX="319.0" layoutY="646.0" onAction="#loadEmojiOnAction" prefHeight="25.0" prefWidth="36.0" text=".">
+      <JFXButton layoutX="336.0" layoutY="646.0" onAction="#loadEmojiOnAction" prefHeight="25.0" prefWidth="36.0" text=".">
          <font>
             <Font size="1.0" />
          </font>
@@ -78,7 +85,7 @@
       <Label layoutX="38.0" layoutY="16.0" prefHeight="34.0" prefWidth="55.0" styleClass="heyLabel" stylesheets="@../stylesheet/stylesheet.css" text="Hey !" />
       <Label layoutX="232.0" layoutY="18.0" text="Lets Chat">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <ImageView fx:id="chatImage" fitHeight="48.0" fitWidth="45.0" layoutX="331.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">

@@ -1,10 +1,10 @@
 .clientNameLabel{
-    -fx-text-fill: red;
+    -fx-text-fill: #273c75;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
 .heyLabel{
-    -fx-text-fill: blue;
+    -fx-text-fill: #4834d4;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
@@ -21,5 +21,17 @@
     -fx-max-height: 400px;
     -fx-font-weight: bold;
     -fx-font-size: 25px;
+    -fx-text-fill: white;
+}
+
+.btnSend{
+    -fx-background-color:  transparent;
+    -fx-background-radius: 10;
+    -fx-min-width: 50px;
+    -fx-min-height: 10px;
+    -fx-max-width: 150px;
+    -fx-max-height: 400px;
+    -fx-font-weight: bold;
+    -fx-font-size: 1px;
     -fx-text-fill: white;
 }

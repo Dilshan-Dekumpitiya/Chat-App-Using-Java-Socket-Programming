@@ -2,7 +2,7 @@ package lk.ijse.chatApp.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.animation.ScaleTransition;
+import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -209,12 +209,21 @@ public class ClientChatFormController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(2), chatImage);
+        FadeTransition fadeTransition = new FadeTransition();
+        fadeTransition.setNode(chatImage);
+        fadeTransition.setDuration(Duration.millis(1000));
+        fadeTransition.setCycleCount(TranslateTransition.INDEFINITE);
+        fadeTransition.setInterpolator(Interpolator.LINEAR);
+        fadeTransition.setFromValue(0);
+        fadeTransition.setToValue(1);
+        fadeTransition.play();
+
+        /*ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(2), chatImage);
         zoomIn.setFromX(0.8);
         zoomIn.setFromY(0.8);
         zoomIn.setToX(1.2);
         zoomIn.setToY(1.2);
-        zoomIn.play();
+        zoomIn.play();*/
 
         emojiAnchorPane.setVisible(false);
         int buttonIndex = 0;
