@@ -7,6 +7,6 @@
 <AnchorPane fx:id="clientLoginPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientLoginFormController">
    <children>
       <JFXButton layoutX="214.0" layoutY="295.0" onAction="#btnLoginOnAction" text="Log in" />
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="188.0" layoutY="242.0" promptText="enter name" />
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="188.0" layoutY="242.0" onAction="#txtNameOnAction" promptText="enter name" />
    </children>
 </AnchorPane>

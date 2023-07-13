@@ -209,11 +209,11 @@ public class ClientChatFormController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(1.5), chatImage);
-        zoomIn.setFromX(1.0);
-        zoomIn.setFromY(1.0);
-        zoomIn.setToX(1.5);
-        zoomIn.setToY(1.5);
+        ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(2), chatImage);
+        zoomIn.setFromX(0.8);
+        zoomIn.setFromY(0.8);
+        zoomIn.setToX(1.2);
+        zoomIn.setToY(1.2);
         zoomIn.play();
 
         emojiAnchorPane.setVisible(false);
