@@ -1,11 +1,3 @@
-.btnLogin{
-    -fx-background-color:  #30336b;
-    -fx-background-radius: 10;
-    -fx-min-width: 90px;
-    -fx-min-height: 40px;
-    -fx-max-width: 90px;
-    -fx-max-height: 40px;
-}
 .clientNameLabel{
     -fx-text-fill: red;
     -fx-font-size: 20px;
@@ -16,6 +8,17 @@
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
-.clientChatScrollPane{
-    -fx-text-fill: #57606f;
+/*.clientChatScrollPane{
+    -fx-background-color: #747d8c;
+}*/
+.btnStartServer{
+    -fx-background-color:  #30336b;
+    -fx-background-radius: 10;
+    -fx-min-width: 90px;
+    -fx-min-height: 10px;
+    -fx-max-width: 180px;
+    -fx-max-height: 400px;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
 }

@@ -45,15 +45,8 @@ public class ClientLoginFormController {
         thread.start();
         txtName.clear();
 
-        clientImage.setImage(null);
-        clientImage.setImage(new Image(new FileInputStream("src/main/resources/img/user.png")));
-
-
-    //   clientChatFormController.setClientImage(bytes);
-
-       // clientChatFormController.setClientImage(image);
-
-//        clientChatFormController.setClientImage(bytes);
+      //  clientImage.setImage(null);
+      //  clientImage.setImage(new Image(new FileInputStream("src/main/resources/img/user.png")));
 
     }
 
@@ -62,47 +55,7 @@ public class ClientLoginFormController {
         this.client = client;
     }
 
-    @FXML
-    void btnAddClientImageOnAction(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image File");
-        FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg");
-        fileChooser.getExtensionFilters().add(imageFilter);
-        File selectedFile = fileChooser.showOpenDialog(new Stage());
-        if (selectedFile != null) {
-            try {
-             //   bytes = Files.readAllBytes(selectedFile.toPath());
 
-                // Display the image in an ImageView or any other UI component
-                /*ImageView imageView = new ImageView(new Image(new FileInputStream(selectedFile)));
-                imageView.setStyle("-fx-padding: 10px;");
-                imageView.setFitHeight(180);
-                imageView.setFitWidth(100);
-
-                hBox.getChildren().addAll(imageView);
-                clientImage.setImage(imageView);
-                clientImage.getChildren().add(hBox);
-
-                client.sendImage(bytes);*/
-
-                image = new Image(new FileInputStream(selectedFile));
-               /* imageView.setStyle("-fx-padding: 10px;");
-                imageView.setFitHeight(180);
-                imageView.setFitWidth(100);*/
-
-                clientImage.setImage(null);
-                clientImage.setImage(image);
-
-              //  getImage(image);
-
-
-
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 
     public Image getImage() {
 

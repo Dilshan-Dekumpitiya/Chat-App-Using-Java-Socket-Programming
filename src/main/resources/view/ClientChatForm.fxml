@@ -16,6 +16,11 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ClientChatFormController">
    <children>
+      <ImageView fitHeight="707.0" fitWidth="461.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/background.png" />
+         </image>
+      </ImageView>
       <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="17.0" layoutY="646.0" prefHeight="25.0" prefWidth="336.0" promptText="message here" />
       <Separator layoutX="15.0" layoutY="630.0" prefHeight="5.0" prefWidth="421.0" />
       <JFXButton layoutX="353.0" layoutY="646.0" onAction="#btnSendOnAction" prefHeight="25.0" prefWidth="62.0" text="Send" textFill="#f80000" />
@@ -35,7 +40,7 @@
             <Font size="1.0" />
          </font>
       </JFXButton>
-      <ScrollPane layoutX="23.0" layoutY="68.0" prefHeight="537.0" prefWidth="404.0">
+      <ScrollPane layoutX="23.0" layoutY="68.0" prefHeight="537.0" prefWidth="404.0" styleClass="clientChatScrollPane" stylesheets="@../stylesheet/stylesheet.css">
          <content>
             <VBox fx:id="vbox" prefHeight="535.0" prefWidth="402.0" />
          </content>
