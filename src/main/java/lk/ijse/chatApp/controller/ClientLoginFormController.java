@@ -61,7 +61,7 @@ public class ClientLoginFormController implements Initializable {
         }else {
             txtName.setStyle("-fx-border-color: red;-fx-border-radius: 10;");
 
-            lblNameError.setText("* Can't use Numbers as your name");
+            lblNameError.setText("* Can't use Numbers as your name or empty name");
 
             lblNameError.setVisible(true);
             txtName.clear();

@@ -205,6 +205,7 @@ public class ClientChatFormController implements Initializable{
     }
 
     public void setName(String name){
+
         lblClientName.setText(name);
     }
 

@@ -39,11 +39,17 @@
 .btnLogin{
     -fx-background-color:  #12CBC4;
     -fx-background-radius: 10;
-    -fx-min-width: 90px;
+    -fx-min-width: 50px;
     -fx-min-height: 10px;
     -fx-max-width: 180px;
     -fx-max-height: 400px;
     -fx-font-weight: bold;
-    -fx-font-size: 25px;
+    -fx-font-size: 20px;
     -fx-text-fill: white;
+}
+
+.liveChatLoginLabel{
+    -fx-text-fill: #4834d4;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
 }

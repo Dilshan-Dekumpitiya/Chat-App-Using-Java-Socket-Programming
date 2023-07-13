@@ -83,12 +83,12 @@
          </children>
       </AnchorPane>
       <Label layoutX="38.0" layoutY="16.0" prefHeight="34.0" prefWidth="55.0" styleClass="heyLabel" stylesheets="@../stylesheet/stylesheet.css" text="Hey !" />
-      <Label layoutX="232.0" layoutY="18.0" text="Lets Chat">
+      <Label layoutX="232.0" layoutY="18.0" text="Let's Chat">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="chatImage" fitHeight="48.0" fitWidth="45.0" layoutX="331.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chatImage" fitHeight="48.0" fitWidth="45.0" layoutX="337.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/chat.png" />
          </image>
