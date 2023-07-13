@@ -1,3 +1,4 @@
 # Chat-App-Using-Java-Socket-Programming
-## Used Technologies
-### JavaFX,Maven Building System,CSS
+### To run this project - Need Java FX SDK as VM option and Java FX libraries(lib)
+### Used Technologies
+#### JavaFX,Maven Building System,CSS
