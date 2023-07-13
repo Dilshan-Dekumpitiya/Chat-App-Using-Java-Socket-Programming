@@ -8,12 +8,17 @@
 
 <AnchorPane fx:id="startServerPane" prefHeight="439.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApp.controller.ServerStartFormController">
    <children>
+      <ImageView fitHeight="439.0" fitWidth="356.0" opacity="0.78" pickOnBounds="true">
+         <image>
+            <Image url="@../img/start%20image.jpg" />
+         </image>
+      </ImageView>
       <JFXButton layoutX="88.0" layoutY="301.0" maxWidth="243.0" onAction="#btnServerStartOnAction" prefHeight="54.0" prefWidth="243.0" styleClass="btnStartServer" stylesheets="@../stylesheet/stylesheet.css" text="Start Server ">
          <font>
             <Font size="25.0" />
          </font>
       </JFXButton>
-      <ImageView fx:id="startImage" fitHeight="150.0" fitWidth="200.0" layoutX="78.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="startImage" fitHeight="128.0" fitWidth="180.0" layoutX="88.0" layoutY="129.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/server_start-removebg-preview.png" />
          </image>
