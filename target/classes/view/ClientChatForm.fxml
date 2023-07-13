@@ -21,7 +21,7 @@
             <Image url="@../img/background.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="17.0" layoutY="646.0" prefHeight="25.0" prefWidth="353.0" promptText="message here" />
+      <JFXTextField fx:id="txtMsg" labelFloat="true" layoutX="17.0" layoutY="646.0" onAction="#txtMsgOnAction" prefHeight="25.0" prefWidth="353.0" promptText="message here" />
       <Separator layoutX="15.0" layoutY="630.0" prefHeight="5.0" prefWidth="421.0" />
       <JFXButton layoutX="372.0" layoutY="642.0" minWidth="55.0" onAction="#btnSendOnAction" prefHeight="34.0" prefWidth="55.0" styleClass="btnSend" stylesheets="@../stylesheet/stylesheet.css" text="." textFill="#f80000">
          <graphic>

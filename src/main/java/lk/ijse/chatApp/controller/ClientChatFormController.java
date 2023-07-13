@@ -259,4 +259,10 @@ public class ClientChatFormController implements Initializable{
        // clientImage=new ImageView(new Image(new ByteArrayInputStream(bytes)));
        // clientImage.setImage(image);
     }
+
+    @FXML
+    void txtMsgOnAction(ActionEvent event) {
+        btnSendOnAction(event);
+    }
+
 }
