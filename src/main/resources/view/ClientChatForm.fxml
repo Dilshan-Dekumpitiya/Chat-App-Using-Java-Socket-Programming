@@ -76,5 +76,10 @@
          </children>
       </AnchorPane>
       <Label layoutX="38.0" layoutY="16.0" prefHeight="34.0" prefWidth="55.0" styleClass="heyLabel" stylesheets="@../stylesheet/stylesheet.css" text="Hey !" />
+      <Label layoutX="232.0" layoutY="18.0" text="Lets Chat">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -11,5 +13,10 @@
             <Font size="25.0" />
          </font>
       </JFXButton>
+      <ImageView fx:id="startImage" fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/server_start-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

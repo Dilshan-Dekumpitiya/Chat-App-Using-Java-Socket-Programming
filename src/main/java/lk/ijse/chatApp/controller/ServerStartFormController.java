@@ -1,20 +1,30 @@
 package lk.ijse.chatApp.controller;
 
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import lk.ijse.chatApp.server.Server;
 import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ServerStartFormController {
+public class ServerStartFormController implements Initializable {
 
 
     public AnchorPane startServerPane;
+
+    @FXML
+    private ImageView startImage;
+
     @FXML
     void btnServerStartOnAction(ActionEvent event) throws IOException {
 
@@ -36,5 +46,15 @@ public class ServerStartFormController {
         Runnable server = Server.getServerSocket(); //dependency injection (Runnable interface)
         Thread thread = new Thread(server);
         thread.start();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(1.5), startImage);
+        zoomIn.setFromX(1.0);
+        zoomIn.setFromY(1.0);
+        zoomIn.setToX(1.5);
+        zoomIn.setToY(1.5);
+        zoomIn.play();
     }
 }
