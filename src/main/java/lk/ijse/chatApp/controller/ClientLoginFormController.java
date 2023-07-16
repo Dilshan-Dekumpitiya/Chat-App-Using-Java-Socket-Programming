@@ -72,6 +72,11 @@ public class ClientLoginFormController implements Initializable {
     }
 
     @FXML
+    void btnLogoutOnAction(ActionEvent event) {
+            System.exit(0);
+    }
+
+    @FXML
     void txtNameOnAction(ActionEvent event) throws IOException {
         btnLoginOnAction(event);
     }
