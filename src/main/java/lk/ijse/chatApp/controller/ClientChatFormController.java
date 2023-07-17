@@ -7,11 +7,13 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -22,10 +24,7 @@ import javafx.util.Duration;
 import lk.ijse.chatApp.client.Client;
 import lk.ijse.chatApp.client.ClientHandler;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Objects;
@@ -52,6 +51,10 @@ public class ClientChatFormController implements Initializable{
     @FXML
     private ImageView chatImage;
 
+    private File filePath;
+
+    private PrintWriter printWriter;
+
 
     @FXML
     private VBox vBoxClientImage;
@@ -66,7 +69,7 @@ public class ClientChatFormController implements Initializable{
         this.client = client;
     }
 
-    private final String[] emojis = {
+    /*private final String[] emojis = {
             "\uD83D\uDE00", // 😀
             "\uD83D\uDE01", // 😁
             "\uD83D\uDE02", // 😂
@@ -87,7 +90,7 @@ public class ClientChatFormController implements Initializable{
             "\uD83D\uDE11", // 😑
             "\uD83D\uDE12", // 😒
             "\uD83D\uDE13"  // 😓
-    };
+    };*/
 
     @FXML
     void btnSendOnAction(ActionEvent event) {
@@ -133,8 +136,8 @@ public class ClientChatFormController implements Initializable{
                 // Display the image in an ImageView or any other UI component
                 ImageView imageView = new ImageView(new Image(new FileInputStream(selectedFile)));
                 imageView.setStyle("-fx-padding: 10px;");
-                imageView.setFitHeight(180);
-                imageView.setFitWidth(100);
+            //    imageView.setFitHeight(180);
+          //      imageView.setFitWidth(100);
 
                 hBox.getChildren().addAll(imageView);
                 vbox.getChildren().add(hBox);
@@ -165,8 +168,29 @@ public class ClientChatFormController implements Initializable{
         Platform.runLater(() -> {
             ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(bytes)));
             imageView.setStyle("-fx-padding: 10px;");
-            imageView.setFitHeight(180);
-            imageView.setFitWidth(100);
+         //   imageView.setFitHeight(180);
+        //    imageView.setFitWidth(100);
+
+       //     imageView.setFitHeight(80);
+        //    imageView.setFitWidth(80);
+
+            hBox.getChildren().addAll(messageLbl, imageView);
+            vbox.getChildren().add(hBox);
+        });
+    }
+
+    public void setEmojiImage(byte[] bytes, String sender) {
+        HBox hBox = new HBox();
+        Label messageLbl = new Label(sender);
+        messageLbl.setStyle("-fx-background-color:   #5f27cd;-fx-background-radius:15;-fx-font-size: 18;-fx-font-weight: normal;-fx-text-fill: white;-fx-wrap-text: true;-fx-alignment: center;-fx-content-display: left;-fx-padding: 10;-fx-max-width: 350;");
+
+        hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 520; -fx-max-width: 520; -fx-padding: 10; " + (sender.equals(client.getName()) ? "-fx-alignment: center-right;" : "-fx-alignment: center-left;"));
+        // Display the image in an ImageView or any other UI component
+        Platform.runLater(() -> {
+            ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(bytes)));
+            imageView.setStyle("-fx-padding: 10px;");
+            imageView.setFitHeight(50);
+            imageView.setFitWidth(50);
 
             hBox.getChildren().addAll(messageLbl, imageView);
             vbox.getChildren().add(hBox);
@@ -184,8 +208,8 @@ public class ClientChatFormController implements Initializable{
 
     @FXML
     void loadEmojiOnAction(ActionEvent event) {
-        emojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
-
+       emojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
+      //  emojiAnchorPane.setVisible(true);
     }
 
     private JFXButton createEmojiButton(String emoji) {
@@ -229,7 +253,7 @@ public class ClientChatFormController implements Initializable{
         zoomIn.play();*/
 
         emojiAnchorPane.setVisible(false);
-        int buttonIndex = 0;
+        /*int buttonIndex = 0;
         for (int row = 0; row < 4; row++) {
             for (int column = 0; column < 4; column++) {
                 if (buttonIndex < emojis.length) {
@@ -241,7 +265,7 @@ public class ClientChatFormController implements Initializable{
                     break;
                 }
             }
-        }
+        }*/
     }
 
     public void setClientImage(Image image){
@@ -268,4 +292,30 @@ public class ClientChatFormController implements Initializable{
         btnSendOnAction(event);
     }
 
+    @FXML
+    void sadImageClick(MouseEvent event) throws IOException {
+        gifEmoji("src/main/resources/emojis/a.png");
+
+    }
+    private void gifEmoji(String path) throws IOException {
+
+        this.filePath = new File(path);
+        byte[] bytes = Files.readAllBytes(filePath.toPath());
+
+        HBox hBox = new HBox();
+      //  hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 50; -fx-max-width: 50; -fx-padding: 10; -fx-alignment: center-right;");
+
+        hBox.setStyle("-fx-alignment: center-right;");
+
+        // Display the image in an ImageView or any other UI component
+        ImageView imageView = new ImageView(new Image(new FileInputStream(filePath)));
+        imageView.setStyle("-fx-padding: 10px;");
+      //  imageView.setFitHeight(50);
+     //   imageView.setFitWidth(50);
+
+        hBox.getChildren().addAll(imageView);
+        vbox.getChildren().add(hBox);
+
+        client.sendImage(bytes);
+    }
 }

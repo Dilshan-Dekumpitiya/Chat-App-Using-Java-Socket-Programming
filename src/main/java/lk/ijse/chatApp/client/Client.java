@@ -59,7 +59,8 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
                 message = inputStream.readUTF();
                 if (message.equals("*image*")) {
                     receiveImage();
-                } else {
+                }
+                else {
                     clientChatFormController.writeMessage(message);
                 }
 
@@ -124,6 +125,15 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
         inputStream.readFully(bytes);
         System.out.println(name + "- Image received: from " + utf);
         clientChatFormController.setImage(bytes, utf);
+        // Handle the received image bytes as needed
+    }
+    private void receiveEmojiImage() throws IOException {
+        String utf = inputStream.readUTF();
+        int size = inputStream.readInt();
+        byte[] bytes = new byte[size];
+        inputStream.readFully(bytes);
+        System.out.println(name + "- Image received: from " + utf);
+        clientChatFormController.setEmojiImage(bytes, utf);
         // Handle the received image bytes as needed
     }
 }

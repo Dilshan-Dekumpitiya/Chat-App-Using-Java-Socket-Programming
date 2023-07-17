@@ -79,6 +79,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="103.0" onMouseClicked="#sadImageClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../emojis/a.png" />
+                     </image>
+                  </ImageView>
+               </children>
             </GridPane>
          </children>
       </AnchorPane>
