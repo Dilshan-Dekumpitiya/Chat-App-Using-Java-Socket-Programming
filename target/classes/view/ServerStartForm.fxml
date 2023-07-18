@@ -20,7 +20,7 @@
       </JFXButton>
       <ImageView fx:id="startImage" fitHeight="128.0" fitWidth="180.0" layoutX="88.0" layoutY="129.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/server_start-removebg-preview.png" />
+            <Image url="@../img/server-start.png" />
          </image>
       </ImageView>
    </children>

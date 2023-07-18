@@ -7,7 +7,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -22,7 +21,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.chatApp.client.Client;
-import lk.ijse.chatApp.client.ClientHandler;
 
 import java.io.*;
 import java.net.URL;
@@ -299,161 +297,160 @@ public class ClientChatFormController implements Initializable{
     @FXML
     void loadEmojiOnAction(ActionEvent event) {
         emojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
-        //  emojiAnchorPane.setVisible(true);
     }
 
     @FXML
     void tearsOfJoyEmojiMouseClick(MouseEvent event) throws IOException {
-        gifEmoji("src/main/resources/emojis/tears-of-joy.png");
+        emojiSet("src/main/resources/emojis/tears-of-joy.png");
 
     }
 
     @FXML
-    void floorLaughingEmojiMouseClick(MouseEvent event) {
-
+    void floorLaughingEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/floor-laughing.png");
     }
 
     @FXML
-    void faceKissEmojiMouseClick(MouseEvent event) {
-
+    void faceKissEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-kiss.png");
     }
 
     @FXML
-    void grinningFaceEmojiMouseClick(MouseEvent event) {
-
+    void grinningFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/grinning-face.png");
     }
 
     @FXML
-    void faceWithHeartEyesEmojiMouseClick(MouseEvent event) {
-
+    void faceWithHeartEyesEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-heart-eyes.png");
     }
 
     @FXML
-    void faceWithHeartsEmojiMouseClick(MouseEvent event) {
-
+    void faceWithHeartsEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-hearts.png");
     }
 
     @FXML
-    void cryingFaceEmojiMouseClick(MouseEvent event) {
-
+    void cryingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/crying-face.png");
     }
 
     @FXML
-    void droolingFaceEmojiMouseClick(MouseEvent event) {
-
+    void droolingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/drooling-face.png");
     }
 
     @FXML
-    void faceFoodEmojiMouseClick(MouseEvent event) {
-
+    void faceFoodEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-food.png");
     }
 
     @FXML
-    void faceWithHandEmojiMouseClick(MouseEvent event) {
-
+    void faceWithHandEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-hand.png");
     }
 
     @FXML
-    void faceWthSunglassesEmojiMouseClick(MouseEvent event) {
-
+    void faceWthSunglassesEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-sunglasses.png");
     }
 
     @FXML
-    void faceWithSpiralEyesEmojiMouseClick(MouseEvent event) {
-
+    void faceWithSpiralEyesEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-spiral-eyes.png");
     }
 
     @FXML
-    void faceWithTearEmojiMouseClick(MouseEvent event) {
-
+    void faceWithTearEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-tear.png");
     }
 
     @FXML
-    void faceWthTongueEmojiMouseClick(MouseEvent event) {
-
+    void faceWthTongueEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-with-tongue.png");
     }
 
     @FXML
-    void fearfulFaceEmojiMouseClick(MouseEvent event) {
-
+    void fearfulFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/fearful-face.png");
     }
 
     @FXML
-    void relievedFaceEmojiMouseClick(MouseEvent event) {
-
+    void relievedFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/relieved-face.png");
     }
 
     @FXML
-    void shushingFaceEmojiMouseClick(MouseEvent event) {
-
+    void shushingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/shushing-face.png");
     }
 
     @FXML
-    void smilingFaceEmojiMouseClick(MouseEvent event) {
-
+    void smilingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/smiling-face.png");
     }
 
     @FXML
-    void smilingFaceWithHaloEmojiMouseClick(MouseEvent event) {
-
+    void smilingFaceWithHaloEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/smiling-face-with-halo.png");
     }
 
     @FXML
-    void thinkingFaceEmojiMouseClick(MouseEvent event) {
-
+    void thinkingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/thinking-face.png");
     }
 
     @FXML
-    void zanyFaceEmojiMouseClick(MouseEvent event) {
-
+    void zanyFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/zany-face.png");
     }
 
     @FXML
-    void zipperMouthFaceEmojiMouseClick(MouseEvent event) {
-
+    void zipperMouthFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/zipper-mouth-face.png");
     }
 
     @FXML
-    void faceWthoutMouthEmojiMouseClick(MouseEvent event) {
-
+    void faceWthoutMouthEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-without-mouth.png");
     }
 
     @FXML
-    void faceScreamingEmojiMouseClick(MouseEvent event) {
-
+    void faceScreamingEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/face-screaming.png");
     }
 
     @FXML
-    void eyesEmojiMouseClick(MouseEvent event) {
-
+    void eyesEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/eyes.png");
     }
 
     @FXML
-    void partyingFaceEmojiMouseClick(MouseEvent event) {
-
+    void partyingFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/partying-face.png");
     }
 
     @FXML
-    void hearMonkeyEmojiMouseClick(MouseEvent event) {
-
+    void hearMonkeyEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/hear-monkey.png");
     }
 
     @FXML
-    void seeMonkeyEmojiMouseClick(MouseEvent event) {
-
+    void seeMonkeyEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/see-monkey.png");
     }
 
     @FXML
-    void moonFaceEmojiMouseClick(MouseEvent event) {
-
+    void moonFaceEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/moon-face.png");
     }
 
     @FXML
-    void heartEmojiMouseClick(MouseEvent event) {
-
+    void heartEmojiMouseClick(MouseEvent event) throws IOException {
+        emojiSet("src/main/resources/emojis/heart.png");
     }
 
-    private void gifEmoji(String path) throws IOException {
+    private void emojiSet(String path) throws IOException {
 
         this.filePath = new File(path);
         byte[] bytes = Files.readAllBytes(filePath.toPath());

@@ -21,7 +21,7 @@
       <Label layoutX="211.0" layoutY="23.0" prefHeight="17.0" prefWidth="202.0" styleClass="liveChatLoginLabel" stylesheets="@../stylesheet/stylesheet.css" text="Live Chat Login" />
       <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="26.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/login-client-96.png" />
+            <Image url="@../img/login-client.png" />
          </image>
       </ImageView>
       <JFXButton layoutX="483.0" layoutY="20.0" onAction="#btnLogoutOnAction" prefHeight="39.0" prefWidth="50.0" text=".">
