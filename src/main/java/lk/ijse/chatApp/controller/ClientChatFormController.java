@@ -98,6 +98,7 @@ public class ClientChatFormController implements Initializable{
     @FXML
     void btnSendOnAction(ActionEvent event) {
         emojiAnchorPane.setVisible(false);
+        unicodeEmojiAnchorPane.setVisible(false);
         String text = txtMsg.getText();
         try {
 
@@ -258,8 +259,8 @@ public class ClientChatFormController implements Initializable{
         emojiAnchorPane.setVisible(false);
         unicodeEmojiAnchorPane.setVisible(false);
         int buttonIndex = 0;
-        for (int row = 0; row < 4; row++) {
-            for (int column = 0; column < 4; column++) {
+        for (int row = 0; row < 5; row++) {
+            for (int column = 0; column < 5; column++) {
                 if (buttonIndex < emojis.length) {
                     String emoji = emojis[buttonIndex];
                     JFXButton emojiButton = createEmojiButton(emoji);
@@ -297,7 +298,7 @@ public class ClientChatFormController implements Initializable{
     }
 
     @FXML
-    void tearsOfJoyEmoji(MouseEvent event) throws IOException {
+    void tearsOfJoyEmojiMouseClick(MouseEvent event) throws IOException {
         gifEmoji("src/main/resources/emojis/tears-of-joy.png");
 
     }
@@ -326,6 +327,6 @@ public class ClientChatFormController implements Initializable{
 
     @FXML
     void loadUnicodeEmojiOnAction(ActionEvent event) {
-        unicodeEmojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
+        unicodeEmojiAnchorPane.setVisible(!unicodeEmojiAnchorPane.isVisible());
     }
 }

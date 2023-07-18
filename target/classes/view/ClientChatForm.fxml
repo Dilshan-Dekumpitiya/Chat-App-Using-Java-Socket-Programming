@@ -66,7 +66,7 @@
       </JFXButton>
       <AnchorPane fx:id="emojiAnchorPane" layoutX="25.0" layoutY="465.0" prefHeight="158.0" prefWidth="404.0">
          <children>
-            <ImageView fitHeight="34.0" fitWidth="69.0" onMouseClicked="#tearsOfJoyEmoji" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="69.0" onMouseClicked="#tearsOfJoyEmojiMouseClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../emojis/tears-of-joy.png" />
                </image>
@@ -105,13 +105,11 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="97.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="103.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
