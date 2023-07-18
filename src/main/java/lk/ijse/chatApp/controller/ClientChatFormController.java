@@ -211,9 +211,8 @@ public class ClientChatFormController implements Initializable{
     }
 
     @FXML
-    void loadEmojiOnAction(ActionEvent event) {
-       emojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
-      //  emojiAnchorPane.setVisible(true);
+    void loadUnicodeEmojiOnAction(ActionEvent event) {
+        unicodeEmojiAnchorPane.setVisible(!unicodeEmojiAnchorPane.isVisible());
     }
 
     private JFXButton createEmojiButton(String emoji) {
@@ -298,10 +297,162 @@ public class ClientChatFormController implements Initializable{
     }
 
     @FXML
+    void loadEmojiOnAction(ActionEvent event) {
+        emojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
+        //  emojiAnchorPane.setVisible(true);
+    }
+
+    @FXML
     void tearsOfJoyEmojiMouseClick(MouseEvent event) throws IOException {
         gifEmoji("src/main/resources/emojis/tears-of-joy.png");
 
     }
+
+    @FXML
+    void floorLaughingEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceKissEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void grinningFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWithHeartEyesEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWithHeartsEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cryingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void droolingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceFoodEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWithHandEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWthSunglassesEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWithSpiralEyesEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWithTearEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWthTongueEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void fearfulFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void relievedFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void shushingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void smilingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void smilingFaceWithHaloEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void thinkingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void zanyFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void zipperMouthFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceWthoutMouthEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void faceScreamingEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void eyesEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void partyingFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void hearMonkeyEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void seeMonkeyEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void moonFaceEmojiMouseClick(MouseEvent event) {
+
+    }
+
+    @FXML
+    void heartEmojiMouseClick(MouseEvent event) {
+
+    }
+
     private void gifEmoji(String path) throws IOException {
 
         this.filePath = new File(path);
@@ -325,8 +476,4 @@ public class ClientChatFormController implements Initializable{
         emojiAnchorPane.setVisible(false);
     }
 
-    @FXML
-    void loadUnicodeEmojiOnAction(ActionEvent event) {
-        unicodeEmojiAnchorPane.setVisible(!unicodeEmojiAnchorPane.isVisible());
-    }
 }
