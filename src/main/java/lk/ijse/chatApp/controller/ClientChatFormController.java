@@ -293,8 +293,9 @@ public class ClientChatFormController implements Initializable{
     }
 
     @FXML
-    void sadImageClick(MouseEvent event) throws IOException {
-        gifEmoji("src/main/resources/emojis/a.png");
+    void tearsOfJoyEmoji(MouseEvent event) throws IOException {
+        gifEmoji("src/main/resources/emojis/tears-of-joy.png");
+
 
     }
     private void gifEmoji(String path) throws IOException {
@@ -303,7 +304,7 @@ public class ClientChatFormController implements Initializable{
         byte[] bytes = Files.readAllBytes(filePath.toPath());
 
         HBox hBox = new HBox();
-      //  hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 50; -fx-max-width: 50; -fx-padding: 10; -fx-alignment: center-right;");
+        hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 50; -fx-max-width: 50; -fx-padding: 10; -fx-alignment: center-right;");
 
         hBox.setStyle("-fx-alignment: center-right;");
 
@@ -317,5 +318,6 @@ public class ClientChatFormController implements Initializable{
         vbox.getChildren().add(hBox);
 
         client.sendImage(bytes);
+        emojiAnchorPane.setVisible(false);
     }
 }
