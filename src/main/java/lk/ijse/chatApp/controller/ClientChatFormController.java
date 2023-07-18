@@ -49,6 +49,9 @@ public class ClientChatFormController implements Initializable{
     private Label lblClientName;
 
     @FXML
+    private AnchorPane unicodeEmojiAnchorPane;
+
+    @FXML
     private ImageView chatImage;
 
     private File filePath;
@@ -69,7 +72,7 @@ public class ClientChatFormController implements Initializable{
         this.client = client;
     }
 
-    /*private final String[] emojis = {
+    private final String[] emojis = {
             "\uD83D\uDE00", // 😀
             "\uD83D\uDE01", // 😁
             "\uD83D\uDE02", // 😂
@@ -90,7 +93,7 @@ public class ClientChatFormController implements Initializable{
             "\uD83D\uDE11", // 😑
             "\uD83D\uDE12", // 😒
             "\uD83D\uDE13"  // 😓
-    };*/
+    };
 
     @FXML
     void btnSendOnAction(ActionEvent event) {
@@ -253,7 +256,8 @@ public class ClientChatFormController implements Initializable{
         zoomIn.play();*/
 
         emojiAnchorPane.setVisible(false);
-        /*int buttonIndex = 0;
+        unicodeEmojiAnchorPane.setVisible(false);
+        int buttonIndex = 0;
         for (int row = 0; row < 4; row++) {
             for (int column = 0; column < 4; column++) {
                 if (buttonIndex < emojis.length) {
@@ -265,7 +269,7 @@ public class ClientChatFormController implements Initializable{
                     break;
                 }
             }
-        }*/
+        }
     }
 
     public void setClientImage(Image image){
@@ -296,7 +300,6 @@ public class ClientChatFormController implements Initializable{
     void tearsOfJoyEmoji(MouseEvent event) throws IOException {
         gifEmoji("src/main/resources/emojis/tears-of-joy.png");
 
-
     }
     private void gifEmoji(String path) throws IOException {
 
@@ -319,5 +322,10 @@ public class ClientChatFormController implements Initializable{
 
         client.sendImage(bytes);
         emojiAnchorPane.setVisible(false);
+    }
+
+    @FXML
+    void loadUnicodeEmojiOnAction(ActionEvent event) {
+        unicodeEmojiAnchorPane.setVisible(!emojiAnchorPane.isVisible());
     }
 }
