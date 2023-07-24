@@ -52,13 +52,7 @@ public class ServerStartFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(1.5), startImage);
-        zoomIn.setFromX(1.0);
-        zoomIn.setFromY(1.0);
-        zoomIn.setToX(1.5);
-        zoomIn.setToY(1.5);
-        zoomIn.play();*/
-
+        //Transition
         RotateTransition rotateTransition = new RotateTransition();
         rotateTransition.setNode(startImage);
         rotateTransition.setDuration(Duration.millis(1000));

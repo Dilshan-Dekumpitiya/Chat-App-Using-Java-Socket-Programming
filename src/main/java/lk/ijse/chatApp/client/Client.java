@@ -20,10 +20,6 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
     private final DataInputStream inputStream;
     private final DataOutputStream outputStream;
     private ClientChatFormController clientChatFormController;
-   // private ClientLoginFormController clientLoginFormController;
-
-    public Image image;
-    public ClientLoginFormController clientLoginFormController;
 
     public Client(String name) throws IOException {
         this.name = name;
@@ -99,8 +95,6 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
         stage.show();
         clientChatFormController.setName(name);
 
-
-
         stage.setOnCloseRequest(event -> {
             try {
                 inputStream.close();
@@ -127,13 +121,5 @@ public class Client implements Runnable, Serializable { //Serailizale --> To sav
         clientChatFormController.setImage(bytes, utf);
         // Handle the received image bytes as needed
     }
-    /*private void receiveEmojiImage() throws IOException {
-        String utf = inputStream.readUTF();
-        int size = inputStream.readInt();
-        byte[] bytes = new byte[size];
-        inputStream.readFully(bytes);
-        System.out.println(name + "- Image received: from " + utf);
-        clientChatFormController.setEmojiImage(bytes, utf);
-        // Handle the received image bytes as needed
-    }*/
+
 }

@@ -54,16 +54,10 @@ public class ClientChatFormController implements Initializable{
 
     private File filePath;
 
-    private PrintWriter printWriter;
-
 
     @FXML
     private VBox vBoxClientImage;
 
-    public Client getClient() {
-
-        return client;
-    }
 
     public void setClient(Client client) {
 
@@ -139,7 +133,7 @@ public class ClientChatFormController implements Initializable{
                 ImageView imageView = new ImageView(new Image(new FileInputStream(selectedFile)));
                 imageView.setStyle("-fx-padding: 10px;");
             //    imageView.setFitHeight(180);
-          //      imageView.setFitWidth(100);
+            //      imageView.setFitWidth(100);
 
                 hBox.getChildren().addAll(imageView);
                 vbox.getChildren().add(hBox);
@@ -171,28 +165,10 @@ public class ClientChatFormController implements Initializable{
             ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(bytes)));
             imageView.setStyle("-fx-padding: 10px;");
          //   imageView.setFitHeight(180);
-        //    imageView.setFitWidth(100);
+         //    imageView.setFitWidth(100);
 
-       //     imageView.setFitHeight(80);
+         //     imageView.setFitHeight(80);
         //    imageView.setFitWidth(80);
-
-            hBox.getChildren().addAll(messageLbl, imageView);
-            vbox.getChildren().add(hBox);
-        });
-    }
-
-    public void setEmojiImage(byte[] bytes, String sender) {
-        HBox hBox = new HBox();
-        Label messageLbl = new Label(sender);
-        messageLbl.setStyle("-fx-background-color:   #5f27cd;-fx-background-radius:15;-fx-font-size: 18;-fx-font-weight: normal;-fx-text-fill: white;-fx-wrap-text: true;-fx-alignment: center;-fx-content-display: left;-fx-padding: 10;-fx-max-width: 350;");
-
-        hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 520; -fx-max-width: 520; -fx-padding: 10; " + (sender.equals(client.getName()) ? "-fx-alignment: center-right;" : "-fx-alignment: center-left;"));
-        // Display the image in an ImageView or any other UI component
-        Platform.runLater(() -> {
-            ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(bytes)));
-            imageView.setStyle("-fx-padding: 10px;");
-            imageView.setFitHeight(50);
-            imageView.setFitWidth(50);
 
             hBox.getChildren().addAll(messageLbl, imageView);
             vbox.getChildren().add(hBox);
@@ -246,13 +222,6 @@ public class ClientChatFormController implements Initializable{
         fadeTransition.setToValue(1);
         fadeTransition.play();
 
-        /*ScaleTransition zoomIn = new ScaleTransition(Duration.seconds(2), chatImage);
-        zoomIn.setFromX(0.8);
-        zoomIn.setFromY(0.8);
-        zoomIn.setToX(1.2);
-        zoomIn.setToY(1.2);
-        zoomIn.play();*/
-
         emojiAnchorPane.setVisible(false);
         unicodeEmojiAnchorPane.setVisible(false);
         int buttonIndex = 0;
@@ -268,25 +237,6 @@ public class ClientChatFormController implements Initializable{
                 }
             }
         }
-    }
-
-    public void setClientImage(Image image){
-        HBox hBox = new HBox();
-
-        hBox.setStyle("-fx-fill-height: true; -fx-min-height: 50; -fx-pref-width: 520; -fx-max-width: 520; -fx-padding: 10; " );
-        // Display the image in an ImageView or any other UI component
-        Platform.runLater(() -> {
-            ImageView imageView = new ImageView(image);
-            imageView.setStyle("-fx-padding: 10px;");
-            imageView.setFitHeight(180);
-            imageView.setFitWidth(100);
-
-            hBox.getChildren().addAll(imageView);
-            vBoxClientImage.getChildren().add(hBox);
-        });
-
-       // clientImage=new ImageView(new Image(new ByteArrayInputStream(bytes)));
-       // clientImage.setImage(image);
     }
 
     @FXML

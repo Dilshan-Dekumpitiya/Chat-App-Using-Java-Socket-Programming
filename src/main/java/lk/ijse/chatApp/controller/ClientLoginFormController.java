@@ -27,25 +27,10 @@ import java.util.regex.Pattern;
 public class ClientLoginFormController implements Initializable {
 
     @FXML
-    private AnchorPane clientLoginPane;
-
-    @FXML
     private JFXTextField txtName;
 
     @FXML
-    private ImageView clientImage;
-
-    private Client client;
-
-    private Image image;
-
-    @FXML
     private Label lblNameError;
-
-  //  private byte[] bytes;
-
-    private ClientChatFormController clientChatFormController;
-
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
@@ -67,8 +52,6 @@ public class ClientLoginFormController implements Initializable {
             txtName.clear();
             txtName.requestFocus();
         }
-
-
     }
 
     @FXML
